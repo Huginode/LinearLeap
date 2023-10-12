@@ -18,13 +18,15 @@ theta = np.random.randn(2, 1)
 def model(X, theta):
     return X.dot(theta)
 
-#test
+#testu
 plt.scatter(x, y)
 plt.plot(x, model(X, theta), c='r')
 
 # Cost funciton
-def cost_function(X, y, theta):
+def costFunction(X, y, theta):
     m = len(y)
-    return 1/(2*m) * np,sum((model(X, theta) - y)**2)
+    return 1/(2*m) * np.sum((model(X, theta) - y)**2)
+    #return np.sum((model(X, theta) - y)**2).dot(1/(2*m))
 
-cost_function(X, y, theta)
+
+costFunction(X, y, theta)
