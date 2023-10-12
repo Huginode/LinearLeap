@@ -18,7 +18,7 @@ theta = np.random.randn(2, 1)
 def model(X, theta):
     return X.dot(theta)
 
-#testu
+#Plot the dataset
 plt.scatter(x, y)
 plt.plot(x, model(X, theta), c='r')
 
@@ -26,7 +26,23 @@ plt.plot(x, model(X, theta), c='r')
 def costFunction(X, y, theta):
     m = len(y)
     return 1/(2*m) * np.sum((model(X, theta) - y)**2)
-    #return np.sum((model(X, theta) - y)**2).dot(1/(2*m))
+
+# Gradiant Descent
+def grad(X, y, theta):
+    m = len(y)
+    return 1/m * X.T.dot(model(X, theta) - y)
 
 
-costFunction(X, y, theta)
+def gradientDescent(X, y ,theta, learningRate, nIterations):
+
+    for i in range(nIterations):
+        theta = theta - learningRate * grad(X, y , theta)
+
+    return theta
+
+thetaFinal = gradientDescent(X, y, theta, learningRate=0.01, nIterations=1000)
+
+# Verifying the parameters
+prediction = model(X, thetaFinal)
+plt.plot(x, prediction, c='g')
+plt.show()
