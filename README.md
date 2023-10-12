@@ -10,3 +10,6 @@ I used the least squares method to calculate the performance.
 So it can be observed that it usually works pretty well, with determining coefficient between 99% and 90%.
 
 But sometimes it is completely weird and gives something low like 50%, but it is probably due to my high learning rate (0.01)
+
+![alt text](https://github.com/Huginode/LearningLeap/blob/main/Pictures/RegressionGraph.png?raw=true)
+![alt text](https://github.com/Huginode/LearningLeap/blob/main/Pictures/LearningCurve.png?raw=true)
