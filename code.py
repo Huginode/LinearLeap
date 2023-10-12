@@ -34,15 +34,30 @@ def grad(X, y, theta):
 
 
 def gradientDescent(X, y ,theta, learningRate, nIterations):
-
+    costHistory = np.zeros(nIterations)
     for i in range(nIterations):
         theta = theta - learningRate * grad(X, y , theta)
+        costHistory[i] = costFunction(X, y ,theta)
 
-    return theta
+    return theta, costHistory
 
-thetaFinal = gradientDescent(X, y, theta, learningRate=0.01, nIterations=1000)
+thetaFinal, costHistory  = gradientDescent(X, y, theta, learningRate=0.01, nIterations=1000)
 
 # Verifying the parameters
 prediction = model(X, thetaFinal)
 plt.plot(x, prediction, c='g')
 plt.show()
+
+# Ploting the learning curve
+plt.plot(range(1000), costHistory)
+plt.show()
+
+# Calculating performance using the Least squares method
+def determiningCoef(y, prediction):
+    u =((y - prediction)**2).sum()
+    v = ((y - y.mean())**2).sum()
+    return 1 - u/v
+
+
+a = determiningCoef(y, prediction)
+print(a)
