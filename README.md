@@ -11,6 +11,5 @@ So it can be observed that it usually works pretty well, with determining coeffi
 
 But sometimes it is completely weird and gives something low like 50%, but it is probably due to my high learning rate (0.01)
 
-![alt text](https://github.com/Huginode/LearningLeap/Pictures/RegressionGraph.png?raw=true)
-
-![alt text](https://github.com/Huginode/LearningLeap/Pictures/LearningCurve.png?raw=true)
+![alt text](https://github.com/Huginode/LinearLeap/blob/main/Pictures/RegressionGraph.png?raw=true)
+![alt text](https://github.com/Huginode/LinearLeap/blob/main/Pictures/LearningCurve.png?raw=true)
